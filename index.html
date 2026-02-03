@@ -110,7 +110,7 @@
 
     .nav-links a {
       color: #fff;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .btn {
@@ -121,7 +121,7 @@
       border-radius: 999px;
       border: none;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
       text-decoration: none;
       transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
@@ -174,6 +174,7 @@
       background: transparent;
       cursor: pointer;
       color: #fff;
+      font-weight: 800;
     }
     .theme-toggle:hover { border-color: rgba(255,255,255,0.9); }
 
@@ -291,7 +292,7 @@
       padding: 4px 10px;
       border-radius: 999px;
       margin-bottom: 14px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
@@ -344,7 +345,7 @@
       background:rgba(255,255,255,0.9);
       border:1px solid rgba(148,163,184,0.6);
       font-size:11px;
-      font-weight:700;
+      font-weight:800;
     }
     .stack-pill span { font-size:13px; }
     body.dark .stack-pill { background:rgba(15,23,42,0.95); border-color:rgba(51,65,85,0.9); }
@@ -404,7 +405,7 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 6px;
-      font-weight: 700;
+      font-weight: 800;
     }
     body.dark .badge { background: #0F172A; color: #93C5FD; }
 
@@ -440,7 +441,7 @@
       align-items: center;
       justify-content: center;
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 900;
     }
     body.dark .step-number { background: #0F172A; color: #93C5FD; }
     .step-content h3 { margin: 0 0 4px; font-size: 15px; }
@@ -560,7 +561,7 @@
       border: 1px solid rgba(148,163,184,0.35);
       background: rgba(255,255,255,0.65);
       color: inherit;
-      font-weight: 800;
+      font-weight: 900;
       text-decoration: none;
     }
 
@@ -585,9 +586,8 @@
       padding: 0;
       text-align: left;
       border: 0;
-      background: transparent;
-      cursor: pointer;
       background: var(--card-bg);
+      cursor: pointer;
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid #E5E7EB;
@@ -595,16 +595,16 @@
       transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .gallery-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 40px rgba(15,23,42,0.12);
-      border-color: rgba(148,163,184,0.9);
-    }
-
     body.dark .gallery-item {
       background: #020617;
       border-color: #1E293B;
       box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+      border-color: rgba(148,163,184,0.9);
     }
 
     .gallery-item img {
@@ -618,7 +618,7 @@
       padding: 10px 12px;
       font-size: 13px;
       color: #4B5563;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     body.dark .gallery-meta { color: #9CA3AF; }
@@ -675,7 +675,7 @@
       padding: 10px 14px 14px;
       font-size: 13px;
       color: #4B5563;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     body.dark .lightbox-caption { color: #9CA3AF; }
@@ -717,7 +717,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#how">How It Works</a>
-        <a href="#projects">Work</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
         <a href="tel:+61414441192" class="btn btn-header">Call: 0414 441 192</a>
         <button type="button" class="theme-toggle" id="themeToggle">
@@ -762,7 +762,7 @@
       <a class="drawer-link" href="#about">About</a>
       <a class="drawer-link" href="#services">Services</a>
       <a class="drawer-link" href="#how">How It Works</a>
-      <a class="drawer-link" href="#projects">Work</a>
+      <a class="drawer-link" href="#work">Work</a>
       <a class="drawer-link" href="#contact">Contact</a>
     </div>
 
@@ -976,11 +976,11 @@
     </div>
   </section>
 
-  <!-- RECENT WORK / GALLERY -->
-  <section id="projects">
+  <!-- WORK -->
+  <section id="work">
     <div class="container">
       <div class="section-header">
-        <div class="section-kicker">Recent work</div>
+        <div class="section-kicker">Work</div>
         <h2>Examples of our work</h2>
         <div class="section-underline"></div>
         <p>
@@ -1000,9 +1000,9 @@
           <div class="gallery-meta">Frameless shower screen</div>
         </button>
 
-        <button class="gallery-item" data-full="assets/photos/office%20cubicle%204.jpeg.webp" data-caption="Office cubicle partition">
-          <img loading="lazy" src="assets/photos/office%20cubicle%204.jpeg.webp" alt="Office cubicle glass partition">
-          <div class="gallery-meta">Office cubicle partition</div>
+        <button class="gallery-item" data-full="assets/photos/Office%2BPartitions%2B1.jpg.webp" data-caption="Office partitions">
+          <img loading="lazy" src="assets/photos/Office%2BPartitions%2B1.jpg.webp" alt="Office partitions installation in Melbourne">
+          <div class="gallery-meta">Office partitions</div>
         </button>
 
         <button class="gallery-item" data-full="assets/photos/Office%2BPartitions%2B2.jpg.webp" data-caption="Office partitions">
@@ -1010,8 +1010,23 @@
           <div class="gallery-meta">Office partitions</div>
         </button>
 
-        <button class="gallery-item" data-full="assets/photos/office%20cubicle%203.JPG.webp" data-caption="Office cubicle partition">
-          <img loading="lazy" src="assets/photos/office%20cubicle%203.JPG.webp" alt="Office cubicle glass partition detail">
+        <button class="gallery-item" data-full="assets/photos/Office%2BPartitions%2B3.jpg.webp" data-caption="Office partitions">
+          <img loading="lazy" src="assets/photos/Office%2BPartitions%2B3.jpg.webp" alt="Office partitions installation in Melbourne">
+          <div class="gallery-meta">Office partitions</div>
+        </button>
+
+        <button class="gallery-item" data-full="assets/photos/Thorn-office-fitout-6.jpeg.webp" data-caption="Thorn office fit-out">
+          <img loading="lazy" src="assets/photos/Thorn-office-fitout-6.jpeg.webp" alt="Thorn office fit-out glass work">
+          <div class="gallery-meta">Thorn office fit-out</div>
+        </button>
+
+        <button class="gallery-item" data-full="assets/photos/chen-foods-new-offices.jpeg.webp" data-caption="Corporate office glazing">
+          <img loading="lazy" src="assets/photos/chen-foods-new-offices.jpeg.webp" alt="Corporate office glazing">
+          <div class="gallery-meta">Corporate office glazing</div>
+        </button>
+
+        <button class="gallery-item" data-full="assets/photos/office%20cubicle%201.JPG.webp" data-caption="Office cubicle partition">
+          <img loading="lazy" src="assets/photos/office%20cubicle%201.JPG.webp" alt="Office cubicle glass partition">
           <div class="gallery-meta">Office cubicle partition</div>
         </button>
 
@@ -1020,24 +1035,24 @@
           <div class="gallery-meta">Office cubicle partition</div>
         </button>
 
-        <button class="gallery-item" data-full="assets/photos/office%20cubicle%201.JPG.webp" data-caption="Office cubicle partition">
-          <img loading="lazy" src="assets/photos/office%20cubicle%201.JPG.webp" alt="Office cubicle partition project">
+        <button class="gallery-item" data-full="assets/photos/office%20cubicle%203.JPG.webp" data-caption="Office cubicle partition">
+          <img loading="lazy" src="assets/photos/office%20cubicle%203.JPG.webp" alt="Office cubicle glass partition detail">
           <div class="gallery-meta">Office cubicle partition</div>
         </button>
 
-        <button class="gallery-item" data-full="assets/photos/Thorn-office-fitout-6.jpeg.webp" data-caption="Thorn office fit-out">
-          <img loading="lazy" src="assets/photos/Thorn-office-fitout-6.jpeg.webp" alt="Thorn office fit-out glass work">
-          <div class="gallery-meta">Thorn office fit-out</div>
-        </button>
-
-        <button class="gallery-item" data-full="assets/photos/partition%202.jpeg.webp" data-caption="Glass partition detail">
-          <img loading="lazy" src="assets/photos/partition%202.jpeg.webp" alt="Glass partition detail">
-          <div class="gallery-meta">Glass partition detail</div>
+        <button class="gallery-item" data-full="assets/photos/office%20cubicle%204.jpeg.webp" data-caption="Office cubicle partition">
+          <img loading="lazy" src="assets/photos/office%20cubicle%204.jpeg.webp" alt="Office cubicle glass partition">
+          <div class="gallery-meta">Office cubicle partition</div>
         </button>
 
         <button class="gallery-item" data-full="assets/photos/office-partitions.jpeg.webp" data-caption="Office partitions">
           <img loading="lazy" src="assets/photos/office-partitions.jpeg.webp" alt="Office partitions project in Melbourne">
           <div class="gallery-meta">Office partitions</div>
+        </button>
+
+        <button class="gallery-item" data-full="assets/photos/partition%202.jpeg.webp" data-caption="Glass partition detail">
+          <img loading="lazy" src="assets/photos/partition%202.jpeg.webp" alt="Glass partition detail">
+          <div class="gallery-meta">Partition detail</div>
         </button>
       </div>
     </div>
