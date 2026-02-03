@@ -56,7 +56,7 @@
     a:hover { text-decoration: underline; }
     body.dark a { color: #60A5FA; }
 
-    /* ✅ HEADER: light mode blue background + white text */
+    /* HEADER: light mode blue background + white text */
     header {
       position: sticky;
       top: 0;
@@ -131,10 +131,17 @@
     /* Header call-to-action: white pill on blue header */
     .btn-header {
       background: #fff;
-      color: var(--bolt-blue);
+      color: var(--bolt-blue); /* ✅ dark blue number in light mode */
       box-shadow: 0 10px 22px rgba(0,0,0,0.15);
     }
     .btn-header:hover { background: rgba(255,255,255,0.92); transform: translateY(-1px); }
+
+    body.dark .btn-header {
+      background: rgba(255,255,255,0.12);
+      color: #fff; /* readable in dark header */
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+    }
 
     .btn-primary {
       background: var(--bolt-blue);
@@ -182,6 +189,42 @@
       border-color: #1F2937;
       background: #020617;
       color: #E5E7EB;
+    }
+
+    /* Social icons (header) */
+    .social-icons {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 2px;
+    }
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.08);
+      transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+    .social-icon:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.14);
+      text-decoration: none;
+    }
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+      display: block;
+    }
+
+    body.dark .social-icon {
+      border-color: rgba(148,163,184,0.35);
+      background: rgba(255,255,255,0.06);
     }
 
     main { padding-bottom: 48px; }
@@ -464,6 +507,35 @@
     .footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:4px; }
     .footer-privacy { font-size:11px; opacity:0.9; }
 
+    /* Footer social icons */
+    .footer-social {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(255,255,255,0.6);
+      font-size: 12px;
+      font-weight: 800;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    body.dark .footer-social a {
+      background: rgba(15,23,42,0.65);
+      border-color: rgba(51,65,85,0.9);
+    }
+
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
     /* Floating WhatsApp button */
     .whatsapp-float {
       position: fixed;
@@ -614,14 +686,8 @@
       display: block;
     }
 
-    .gallery-meta {
-      padding: 10px 12px;
-      font-size: 13px;
-      color: #4B5563;
-      font-weight: 900;
-    }
-
-    body.dark .gallery-meta { color: #9CA3AF; }
+    /* ✅ removed captions under images */
+    .gallery-meta { display: none; }
 
     /* ===== Lightbox ===== */
     .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; }
@@ -719,7 +785,24 @@
         <a href="#how">How It Works</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
+
+        <!-- Social icons -->
+        <span class="social-icons">
+          <a class="social-icon" href="https://www.instagram.com/andersonglassglazing/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.75 2h8.5C19.43 2 22 4.57 22 7.75v8.5C22 19.43 19.43 22 16.25 22h-8.5C4.57 22 2 19.43 2 16.25v-8.5C2 4.57 4.57 2 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
+            </svg>
+          </a>
+
+          <a class="social-icon" href="https://www.facebook.com/AndersonGlassGlazing" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.87.24-1.46 1.5-1.46h1.6V5.02c-.28-.04-1.23-.12-2.35-.12-2.33 0-3.93 1.42-3.93 4.03V11H8v3h2.57v8h2.93Z"/>
+            </svg>
+          </a>
+        </span>
+
         <a href="tel:+61414441192" class="btn btn-header">Call: 0414 441 192</a>
+
         <button type="button" class="theme-toggle" id="themeToggle">
           <span id="themeIcon">🌙</span>
           <span id="themeLabel">Dark</span>
@@ -769,6 +852,21 @@
     <div class="mobile-actions">
       <a href="tel:+61414441192" class="btn btn-primary">Call: 0414 441 192</a>
       <a href="https://wa.me/61414441192" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+
+      <div class="footer-social" style="margin-top:6px;">
+        <a href="https://www.instagram.com/andersonglassglazing/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5C19.43 2 22 4.57 22 7.75v8.5C22 19.43 19.43 22 16.25 22h-8.5C4.57 22 2 19.43 2 16.25v-8.5C2 4.57 4.57 2 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/AndersonGlassGlazing" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.87.24-1.46 1.5-1.46h1.6V5.02c-.28-.04-1.23-.12-2.35-.12-2.33 0-3.93 1.42-3.93 4.03V11H8v3h2.57v8h2.93Z"/>
+          </svg>
+          Facebook
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -1076,7 +1174,7 @@
         <h2>Get a quote</h2>
         <div class="section-underline"></div>
         <p>
-          Serving Melbourne and surrounding suburbs. Send photos + rough measurements for the fastest quote.
+          Serving Melbourne metro area. Send photos + rough measurements for the fastest quote.
         </p>
       </div>
 
@@ -1087,7 +1185,24 @@
           <p><strong>Email:</strong> <a href="mailto:ben@andersonglass.com.au">ben@andersonglass.com.au</a></p>
           <p><strong>Phone:</strong> <a href="tel:+61414441192">0414 441 192</a></p>
           <p><strong>WhatsApp:</strong> <a href="https://wa.me/61414441192" target="_blank" rel="noopener">Message on WhatsApp</a></p>
-          <p>For urgent breakages, call — we can advise make-safe and next steps.</p>
+
+          <p style="margin-top:10px;"><strong>Social:</strong></p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/andersonglassglazing/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.75 2h8.5C19.43 2 22 4.57 22 7.75v8.5C22 19.43 19.43 22 16.25 22h-8.5C4.57 22 2 19.43 2 16.25v-8.5C2 4.57 4.57 2 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
+              </svg>
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/AndersonGlassGlazing" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.87.24-1.46 1.5-1.46h1.6V5.02c-.28-.04-1.23-.12-2.35-.12-2.33 0-3.93 1.42-3.93 4.03V11H8v3h2.57v8h2.93Z"/>
+              </svg>
+              Facebook
+            </a>
+          </div>
+
+          <p style="margin-top:10px;">For urgent breakages, call — we can advise make-safe and next steps.</p>
         </div>
 
         <div class="card">
@@ -1110,8 +1225,23 @@
   <div class="container">
     <div class="footer-row">
       <div>© <span id="year"></span> Anderson Glass & Glazing. All rights reserved.</div>
-      <div>Melbourne, VIC</div>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/andersonglassglazing/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5C19.43 2 22 4.57 22 7.75v8.5C22 19.43 19.43 22 16.25 22h-8.5C4.57 22 2 19.43 2 16.25v-8.5C2 4.57 4.57 2 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com/AndersonGlassGlazing" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.5 22v-8h2.7l.4-3H13.5V9.1c0-.87.24-1.46 1.5-1.46h1.6V5.02c-.28-.04-1.23-.12-2.35-.12-2.33 0-3.93 1.42-3.93 4.03V11H8v3h2.57v8h2.93Z"/>
+          </svg>
+          Facebook
+        </a>
+      </div>
     </div>
+
     <div class="footer-privacy">
       <strong>Privacy:</strong> This site uses only essential cookies for basic functionality. No tracking/analytics cookies are used.
     </div>
@@ -1127,7 +1257,7 @@
   // Year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ===== Mobile drawer menu =====
+  // Mobile drawer menu
   (function () {
     const drawer = document.getElementById('mobileDrawer');
     const hamburger = document.getElementById('hamburgerBtn');
@@ -1162,7 +1292,7 @@
     });
   })();
 
-  // ===== Theme toggle (desktop + mobile in sync) =====
+  // Theme toggle (desktop + mobile in sync)
   (function() {
     const body = document.body;
 
@@ -1201,7 +1331,7 @@
     if (btnMobile) btnMobile.addEventListener('click', toggleTheme);
   })();
 
-  // ===== Gallery lightbox =====
+  // Gallery lightbox
   (function () {
     const lb = document.getElementById("lightbox");
     const lbImg = document.getElementById("lightboxImg");
