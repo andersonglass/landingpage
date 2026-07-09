@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://andersonglass.com.au/sitemap.xml
